@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <title>Movimientos Pokémon</title>
 </head>
-<body>
-<h2>Movimientos</h2>
-<ul>
+<body class="container py-5">
+<h2 class="mb-4">Movimientos</h2>
+<div class="row">
   <% movimientos.forEach(mov => { %>
-    <li>
-      <strong><%= mov.nombre %></strong> - Tipo: <%= mov.tipo %>, Categoría: <%= mov.categoria %>, Poder: <%= mov.poder %>, Precisión: <%= mov.precision %>, PP: <%= mov.pp %><br>
-      <em><%= mov.descripcion %></em><br>
-      <% if (mov.imagen_url) { %>
-        <img src="<%= mov.imagen_url %>" alt="<%= mov.nombre %>" width="100"><br>
-      <% } %>
-      <a href="<%= mov.smogon_url %>" target="_blank">Ver estrategia en Smogon</a><br>
-      <% if (mov.youtube_url) { %>
-        <iframe width="300" height="180" src="<%= mov.youtube_url %>" frameborder="0" allowfullscreen></iframe>
-      <% } %>
-    </li>
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><%= mov.nombre %></h5>
+          <p class="card-text">Tipo: <%= mov.tipo %>, Categoría: <%= mov.categoria %>, Poder: <%= mov.poder %>, Precisión: <%= mov.precision %>, PP: <%= mov.pp %></p>
+          <p><em><%= mov.descripcion %></em></p>
+          <% if (mov.imagen_url) { %>
+            <img src="<%= mov.imagen_url %>" alt="<%= mov.nombre %>" class="img-fluid mb-2">
+          <% } %>
+          <a class="btn btn-outline-primary btn-sm" href="<%= mov.smogon_url %>" target="_blank">Ver en Smogon</a>
+          <% if (mov.youtube_url) { %>
+            <div class="ratio ratio-16x9 mt-2">
+              <iframe src="<%= mov.youtube_url %>" frameborder="0" allowfullscreen></iframe>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
   <% }) %>
-</ul>
+</div>
 </body>
 </html>
