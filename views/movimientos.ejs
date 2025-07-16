@@ -7,24 +7,60 @@
   <link rel="stylesheet" href="/style.css">
   <title>Movimientos Pokémon</title>
 </head>
-<body class="container py-5">
-<h2 class="mb-4">Movimientos</h2>
-<div class="row">
-  <% movimientos.forEach(mov => { %>
-    <div class="col-md-6 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title"><%= mov.nombre %></h5>
-          <p class="card-text">Tipo: <%= mov.tipo %>, Categoría: <%= mov.categoria %>, Poder: <%= mov.poder %>, Precisión: <%= mov.precision %>, PP: <%= mov.pp %></p>
-          <p><em><%= mov.descripcion %></em></p>
-          <% if (mov.imagen_url) { %>
-            <img src="<%= mov.imagen_url %>" alt="<%= mov.nombre %>" class="img-fluid mb-2">
-          <% } %>
-          <a class="btn btn-outline-primary btn-sm" href="<%= mov.smogon_url %>" target="_blank">Ver en Smogon</a>
-        </div>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">PokéEnciclopedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/movimientos">Movimientos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/habilidades">Habilidades</a>
+          </li>
+        </ul>
       </div>
     </div>
-  <% }) %>
-</div>
+  </nav>
+
+  <div class="container py-5">
+    <h2 class="mb-4">Movimientos</h2>
+    <div class="row">
+      <% movimientos.forEach(mov => { %>
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><%= mov.nombre %></h5>
+              <p class="card-text">
+                Tipo:
+                <img src="/icons/<%= mov.tipo.toLowerCase() %>.png" alt="<%= mov.tipo %>" width="24" height="24">
+                <%= mov.tipo %>,
+                Categoría: <%= mov.categoria %>,
+                Poder: <%= mov.poder %>,
+                Precisión: <%= mov.precision %>,
+                PP: <%= mov.pp %>
+              </p>
+              <p><em><%= mov.descripcion %></em></p>
+              <% if (mov.imagen_url) { %>
+                <img src="<%= mov.imagen_url %>" alt="<%= mov.nombre %>" class="img-fluid mb-2">
+              <% } %>
+              <a class="btn btn-outline-primary btn-sm" href="<%= mov.smogon_url %>" target="_blank">Ver en Smogon</a>
+              <% if (mov.youtube_url && mov.youtube_url.includes("youtube.com/embed/")) { %>
+                <div class="ratio ratio-16x9 mt-2">
+                  <iframe src="<%= mov.youtube_url %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
