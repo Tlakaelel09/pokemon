@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,11 +7,33 @@
   <link rel="stylesheet" href="/style.css">
   <title>Enciclopedia Pokémon</title>
 </head>
-<body class="container py-5">
-  <h1 class="mb-4">Enciclopedia de Movimientos y Habilidades</h1>
-  <nav class="mb-4">
-    <a class="btn btn-primary me-2" href="/movimientos">Ver Movimientos</a>
-    <a class="btn btn-success" href="/habilidades">Ver Habilidades</a>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">PokéEnciclopedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/movimientos">Movimientos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/habilidades">Habilidades</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
+
+  <div class="container py-5 text-center">
+    <h1 class="display-4">Bienvenido a la PokéEnciclopedia</h1>
+    <p class="lead">Explora todos los movimientos y habilidades con información detallada y enlaces a plataformas especializadas.</p>
+    <a href="/movimientos" class="btn btn-primary btn-lg m-2">Explorar Movimientos</a>
+    <a href="/habilidades" class="btn btn-success btn-lg m-2">Explorar Habilidades</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
