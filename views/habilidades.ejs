@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <title>Habilidades Pokémon</title>
 </head>
-<body>
-<h2>Habilidades</h2>
-<ul>
+<body class="container py-5">
+<h2 class="mb-4">Habilidades</h2>
+<div class="row">
   <% habilidades.forEach(hab => { %>
-    <li>
-      <strong><%= hab.nombre %></strong>: <%= hab.descripcion %><br>
-      <a href="<%= hab.bulbapedia_url %>" target="_blank">Ver en Bulbapedia</a>
-    </li>
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><%= hab.nombre %></h5>
+          <p class="card-text"><%= hab.descripcion %></p>
+          <a class="btn btn-outline-success btn-sm" href="<%= hab.bulbapedia_url %>" target="_blank">Ver en Bulbapedia</a>
+        </div>
+      </div>
+    </div>
   <% }) %>
-</ul>
+</div>
 </body>
 </html>
