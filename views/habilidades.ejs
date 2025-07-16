@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style.css">
+  <title>Habilidades Pokémon</title>
+</head>
+<body>
+<h2>Habilidades</h2>
+<ul>
+  <% habilidades.forEach(hab => { %>
+    <li>
+      <strong><%= hab.nombre %></strong>: <%= hab.descripcion %><br>
+      <a href="<%= hab.bulbapedia_url %>" target="_blank">Ver en Bulbapedia</a>
+    </li>
+  <% }) %>
+</ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style.css">
+  <title>Movimientos Pokémon</title>
+</head>
+<body>
+<h2>Movimientos</h2>
+<ul>
+  <% movimientos.forEach(mov => { %>
+    <li>
+      <strong><%= mov.nombre %></strong> - Tipo: <%= mov.tipo %>, Categoría: <%= mov.categoria %>, Poder: <%= mov.poder %>, Precisión: <%= mov.precision %>, PP: <%= mov.pp %><br>
+      <em><%= mov.descripcion %></em><br>
+      <% if (mov.imagen_url) { %>
+        <img src="<%= mov.imagen_url %>" alt="<%= mov.nombre %>" width="100"><br>
+      <% } %>
+      <a href="<%= mov.smogon_url %>" target="_blank">Ver estrategia en Smogon</a><br>
+      <% if (mov.youtube_url) { %>
+        <iframe width="300" height="180" src="<%= mov.youtube_url %>" frameborder="0" allowfullscreen></iframe>
+      <% } %>
+    </li>
+  <% }) %>
+</ul>
+</body>
+</html>

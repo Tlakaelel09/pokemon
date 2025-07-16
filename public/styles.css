@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background: #f4f4f4;
+}
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #cc0000;
+}
+li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+img {
+  margin-top: 5px;
+}
+iframe {
+  margin-top: 10px;
+  display: block;
+}
