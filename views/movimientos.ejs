@@ -49,11 +49,6 @@
                 <img src="<%= mov.imagen_url %>" alt="<%= mov.nombre %>" class="img-fluid mb-2">
               <% } %>
               <a class="btn btn-outline-primary btn-sm" href="<%= mov.smogon_url %>" target="_blank">Ver en Smogon</a>
-              <% if (mov.youtube_url && mov.youtube_url.includes("youtube.com/embed/")) { %>
-                <div class="ratio ratio-16x9 mt-2">
-                  <iframe src="<%= mov.youtube_url %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-              <% } %>
             </div>
           </div>
         </div>
